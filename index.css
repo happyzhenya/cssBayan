@@ -63,39 +63,31 @@ h1 {
   background: var(--bg-color);
 }
 
-.accordion__input:checked + .accordion__content,
-.accordion__input:checked + .accordion__content:hover {
-  background: var(--bg-color);
-}
 .accordion__input {
   display: none;
 }
 
-.accordion__input:checked + .accordion,
-.accordion__input:checked + .accordion:hover {
+/*.accordion__input:checked ~ .accordion,
+.accordion__input:checked ~ .accordion:hover {
   background: var(--bg-color);
   margin: 6px 0px 0px 0px;
   padding: 5px 20px;
 }
-
+*/
 .accordion-container:hover + .accordion:hover:after,
-.accordion:hover:after,
-.accordion__input:checked + .accordion:hover:after {
-  content: "";
+.accordion:hover:after {
+  content: " ";
   position: absolute;
   width: 25px;
   height: 25px;
   right: 5px;
   top: 5px;
-  transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
   background: transparent url("/cssBayan/img/icon-plus-positiv.png") no-repeat
     center center;
 }
 
-.accordion__content:hover + .accordion:hover:after,
 .accordion__input:checked + .accordion:hover:after {
-  transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
-  background-image: url("/cssBayan/img/free-icon-cross.png");
+  transform: rotate(90deg);
 }
 
 .accordion__content:active {
