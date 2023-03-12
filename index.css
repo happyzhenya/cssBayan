@@ -1,0 +1,118 @@
+:root {
+  --bg-color: #ded128;
+  --bg-color-hover: #aea423;
+  --color-hover: blue;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  background: #ded128;
+  position: relative;
+}
+h1 {
+  text-align: left;
+  font-weight: 900;
+}
+
+.accordion-container {
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  background: var(--bg-color);
+  padding: 10px;
+  text-align: left;
+}
+
+.accordion {
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-color);
+  margin: 6px 0px 0px 0px;
+  padding: 5px 20px;
+  position: relative;
+  z-index: 20;
+  display: block;
+
+  border-top: 1px solid grey;
+}
+.accordion:hover {
+  background: var(--bg-color);
+  color: var(--color-hover);
+}
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked + .accordion,
+.accordion__input:checked + .accordion:hover {
+  background: var(--bg-color);
+  margin: 6px 0px 0px 0px;
+  padding: 5px 20px;
+}
+
+.accordion:hover:after,
+.accordion__input:checked + .accordion:hover:after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 5px;
+  top: 5px;
+  background: transparent url("/cssBayan/img/icon-plus-positiv.png") no-repeat
+    center center;
+}
+
+.accordion__input:checked + .accordion:hover:after,
+.accordion__content:hover:after {
+  background-image: url("/cssBayan/img/free-icon-cross.png");
+}
+
+.accordion__content img {
+  margin: 5px;
+  padding: 10px;
+  display: block;
+}
+.accordion__content:hover + .accordion:hover::after {
+  content: "";
+}
+.accordion__content {
+  background: var(--bg-color);
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  cursor: pointer;
+
+  -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  -webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  -moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  -o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  -ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  height: 650px;
+}
